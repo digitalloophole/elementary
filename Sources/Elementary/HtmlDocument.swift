@@ -49,7 +49,6 @@ public protocol HTMLDocument: HTML {
 // which would cause confusing issues when adopters provide a property of a non-optional type.
 private let defaultUndefinedLanguage = ""
 private let defaultUndefinedDirection = ""
-private let defaultUndefinedAttributes: [HTMLAttribute<HTMLTag.body>] = []
 
 public extension HTMLDocument {
     /// The default value for the `lang` property is an empty string and will not be rendered in the HTML.
@@ -57,7 +56,7 @@ public extension HTMLDocument {
     /// The default value for the `dir` property is an empty string and will not be rendered in the HTML.
     var dir: HTMLAttributeValue.Direction { .init(value: defaultUndefinedDirection) }
     /// The default value for the `bodyAttribute` property is an empty array.
-    var bodyAttributes: [HTMLAttribute<HTMLTag.body>] { defaultUndefinedAttributes }
+    var bodyAttributes: [HTMLAttribute<HTMLTag.body>] { [] }
 }
 
 // NOTE: this is a bit messy after the renaming of var content to var body
