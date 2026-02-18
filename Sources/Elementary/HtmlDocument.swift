@@ -32,8 +32,8 @@ public protocol HTMLDocument: HTML {
     /// By default this attribute is not set.
     var lang: String { get }
 
-	/// Attributes for the body tag.
-	var bodyAttributes: [HTMLAttribute<HTMLTag.body>] { get }
+    /// Attributes for the body tag.
+    var bodyAttributes: [HTMLAttribute<HTMLTag.body>] { get }
 
     /// The text directionality (`ltr`, `rtl`, `auto`) of the HTML document.
     ///
@@ -56,8 +56,8 @@ public extension HTMLDocument {
     var lang: String { defaultUndefinedLanguage }
     /// The default value for the `dir` property is an empty string and will not be rendered in the HTML.
     var dir: HTMLAttributeValue.Direction { .init(value: defaultUndefinedDirection) }
-	/// The default value for the `bodyAttribute` property is an empty array.
-	var bodyAttributes: [HTMLAttribute<HTMLTag.body>] { defaultUndefinedAttributes }
+    /// The default value for the `bodyAttribute` property is an empty array.
+    var bodyAttributes: [HTMLAttribute<HTMLTag.body>] { defaultUndefinedAttributes }
 }
 
 // NOTE: this is a bit messy after the renaming of var content to var body
@@ -98,7 +98,7 @@ public extension HTMLDocument {
                 Elementary.title { self.title }
                 self.head
             }
-			Elementary.body(attributes: self.bodyAttributes) { self.body }
+            Elementary.body(attributes: self.bodyAttributes) { self.body }
         }
         .attributes(.lang(lang), when: lang != defaultUndefinedLanguage)
         .attributes(.dir(dir), when: dir.value != defaultUndefinedDirection)

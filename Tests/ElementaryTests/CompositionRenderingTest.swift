@@ -47,7 +47,7 @@ struct MyPage: HTMLDocument {
 
     var title = "Foo"
     var lang = "en"
-	var bodyAttributes: [HTMLAttribute<HTMLTag.body>] = [.class("my-class"), .id("42")]
+    var bodyAttributes: [HTMLAttribute<HTMLTag.body>] = [.class("my-class"), .id("42")]
 
     var head: some HTML {
         meta(.name(.author), .content("Me"))
